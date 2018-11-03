@@ -31,4 +31,4 @@ purposes.
 
 ### References
 
-[1] Karol Grzegorczyk, Marcin Kurdziel, [Disambiguated skip-gram model](http://aclweb.org/anthology/D18-1174), EMNLP 2018
+[1] Karol Grzegorczyk, Marcin Kurdziel, [Disambiguated skip-gram model](http://aclweb.org/anthology/D18-1174), EMNLP 2018, [appendix](http://anthology.aclweb.org/attachments/D/D18/D18-1174.Attachment.zip)
