@@ -21,15 +21,16 @@ Options:
   --az_char_only=VAL          Replace words not matching patter [a-z]+ with UNKNOWN char only [default: True]
 """
 
-import sys
 import logging
+import sys
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', datefmt='%Y-%m-%d %H:%M:%S', stream=sys.stdout, level=logging.INFO)
-import os
 from itertools import chain
 import numpy as np
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
 from nltk import sent_tokenize
 from nltk import word_tokenize
-from nltk.corpus import stopwords
 from utils import UNKNOWN_WORD, NUMBER_TOKEN, letters_only, number_pattern, stops
 
 

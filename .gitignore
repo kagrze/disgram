@@ -1,5 +1,7 @@
+.idea
 *.pyc
 datasets/semeval-2007
 datasets/semeval-2010
 datasets/wwsi
 datasets/WestburyLab*
+datasets/PLEASE*

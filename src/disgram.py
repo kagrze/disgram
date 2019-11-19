@@ -89,7 +89,6 @@ import logging
 import collections
 import os
 import random
-import zipfile
 import cPickle
 import gzip
 import threading
@@ -505,8 +504,8 @@ class Word2VecSG(Word2VecBase):
 
     def pp_loss(self, w):
         ww = tf.matmul(a=w, b=w, transpose_a=True)
-        assert ww.get_shape().as_list()[-2:] == [self._sense_number, self._sense_number]
-        neg_ones = [-1.0 for i in xrange(self._sense_number)]
+        ww_order = ww.get_shape().as_list()[-1]
+        neg_ones = [-1.0] * ww_order
         inverted_diag = tf.diag(diagonal=neg_ones) + 1
         ww_with_zero_diag = tf.multiply(x=ww, y=inverted_diag)
 
@@ -515,7 +514,7 @@ class Word2VecSG(Word2VecBase):
         else:
             losses = tf.square(x=ww_with_zero_diag)
 
-        pp_loss = tf.reduce_sum(input_tensor=losses) / self._sense_number
+        pp_loss = tf.reduce_sum(input_tensor=losses) / ww_order
 
         tf.add_to_collection(name=tf.GraphKeys.REGULARIZATION_LOSSES,
                              value=self._parallel_penalty * pp_loss)
