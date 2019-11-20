@@ -17,11 +17,13 @@ NUMBER_TOKEN = 'NUMBER'
 UNKNOWN_WORD = 'UNKNOWN'
 MIN_WORD_CHARS = 2
 
+
 def make_dir(path):
     if not os.path.exists(path):
         logging.info('Creating dir {}'.format(path))
         os.makedirs(path)
     return path
+
 
 def parse_bool(bool_as_string):
     bool_as_string = bool_as_string.lower().strip()
@@ -31,6 +33,7 @@ def parse_bool(bool_as_string):
         return False
     else:
         raise ValueError('Unknown boolean value: {}.'.format(bool_as_string))
+
 
 def get_loss_function(loss_function_arg):
     if loss_function_arg == 'NCE':
@@ -89,6 +92,7 @@ def generate_context(doc, target_word_id, window_size, left_window_size, right_w
     assert len(context) == window_size
     return [doc[context_word_id] for context_word_id in context]
 
+
 def generate_cbow_batches(requested_batch_size, dictionary, trainset_file, window_size, left_window_size, right_window_size, tokenization_type):
     """
     Generate CBOW word embedding mini-batches.
@@ -130,6 +134,7 @@ class ThreadSafeIterator(object):
     def next(self):
         with self._lock:
             return self._unsafe_iterator.next()
+
 
 def build_and_start_thread_pool(job, kwargs, worker_number):
     """

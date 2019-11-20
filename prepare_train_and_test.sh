@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DATASETS_DIR=./datasets
 BASE_DIR=/tmp/disgram_exp

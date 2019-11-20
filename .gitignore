@@ -5,3 +5,4 @@ datasets/semeval-2010
 datasets/wwsi
 datasets/WestburyLab*
 datasets/PLEASE*
+datasets/dict_*.pkl.gz
