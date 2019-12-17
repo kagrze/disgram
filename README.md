@@ -1,6 +1,6 @@
 ## Disambiguated skip-gram model
 
-This is a Python 2.x implementation of the disambiguated skip-gram model introduced in [1].
+This is a TensorFlow 1.x implementation of the disambiguated skip-gram model introduced in [1].
 
 ### Instalation
 
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ### Training
 
 To reproduce the results from [1] you first need to download the
-[Wesbury Lab Wikipedia corpus](http://www.psych.ualberta.ca/~westburylab/downloads/westburylab.wikicorp.download.html),
+[Wesbury Lab Wikipedia corpus](http://www.psych.ualberta.ca/~westburylab/downloads/westburylab.wikicorp.download.html)
 and unpack it to the `datasets` directory. You can then run the script that will prepare
 the training data, train the model and evaluate it against WSI benchmarks:
 
